@@ -11,7 +11,7 @@ function renderLicenseBadge(license) {
   } else if (license === "BSD 3"){
     licenseBadge = "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) "
   } else {
-    licenseBadge = ""
+    licenseBadge = " "
   }
   return licenseBadge
 }
