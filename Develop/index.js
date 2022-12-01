@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require("fs");
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -28,7 +29,7 @@ const questions = [
         type: 'list',
         message: 'What kind of license should your project have?',
         name: "license",
-        choices: ["![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)","[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)","[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)]","[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)"],
+        choices: ["MIT","Apache","GPL 3.0","BSD3", "None"],
     },
     {
         type: 'input',
@@ -52,54 +53,18 @@ const questions = [
     },
 ];
 
-inquirer.prompt(questions).then((answers) => {
-    const template = `
-    # ${answers.projectName}
-
-    ## Table of Contents
-
-    <nav>
-        <ol>
-            <li><a href="#Project-Description">Project Description</a></li>
-            <li><a href="#License">License</a></li>
-            <li><a href="#What-you-need-to-know">What You Need to Know</a></li>
-            <li><a href="#How-to-Contribute">How to Contribute</a></li>
-            <li><a href="#Contact-Me">Contact Me</a></li>
-        </ol>
-    </nav>
-
-    ## Project Description
-
-    ${answers.project}
-
-    ## License
-
-    ${answers.license}
-
-    ## What you need to know
-
-    ${answers.repo}
-
-    ## How to Contribute
-
-    ${answers.contributing}
-
-    ## Contact Me
-
-    GibHub: ${answers.username}
-    Email: ${answers.email}
-      `;
-  
-    fs.writeFile("./README.md", template, () => {
-      console.log("Please view your auto-generated README");
-    });
-  });
-
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, generateMarkdown(data), (err) => {
+        if (err) throw err;
+        console.log('View your README');
+    });
+}
 
 // // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then((data) => writeToFile("README.md", data))
+};
 
 // Function call to initialize app
 init();
