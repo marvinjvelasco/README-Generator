@@ -1,36 +1,34 @@
+# README Generator
 
-    # README Generator
+## Table of Contents
 
-    ## Table of Contents
+<nav>
+    <ol>
+        <li><a href="#Project-Description">Project Description</a></li>
+        <li><a href="#License">License</a></li>
+        <li><a href="#What-you-need-to-know">What You Need to Know</a></li>
+        <li><a href="#How-to-Contribute">How to Contribute</a></li>
+        <li><a href="#Contact-Me">Contact Me</a></li>
+    </ol>
+</nav>
 
-    <nav>
-        <ol>
-            <li><a href="#Project-Description">Project Description</a></li>
-            <li><a href="#License">License</a></li>
-            <li><a href="#What-you-need-to-know">What You Need to Know</a></li>
-            <li><a href="#How-to-Contribute">How to Contribute</a></li>
-            <li><a href="#Contact-Me">Contact Me</a></li>
-        </ol>
-    </nav>
+## Project Description
 
-    ## Project Description
+This is an automated README Generator that creates a README from the GitBash Terminal
 
-    This is to create an automated README Generator using the GitBash Terminal
+## License
 
-    ## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
-    ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+## What you need to know
 
-    ## What you need to know
+The user should know how to properly comment and review code
 
-    The users needs to understand how to branch and commit
+## How to Contribute
 
-    ## How to Contribute
+The user should know how to properly commit and branch
 
-    How to work with a team and properly communicate
+## Contact Me
 
-    ## Contact Me
-
-    GibHub: MarvinJVelasco
-    Email: marvinjvelasco@gmail.com
-      
+GibHub: MarvinJVelasco
+Email: marvinjvelasco@gmail.com
